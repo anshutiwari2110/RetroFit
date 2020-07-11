@@ -28,4 +28,11 @@ public class Articles {
         item.source = Source.parseSourceJSON(sourceObject);
         return item;
     }
+
+    public static Articles parseJSONHeadlines(JSONObject jsonObject){
+        Articles headline = new Articles();
+
+        headline.title = jsonObject.optString("title");
+        return headline;
+    }
 }

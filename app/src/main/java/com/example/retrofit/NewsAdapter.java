@@ -36,7 +36,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
 
         holder.mTvAuthor.setText(currentArticle.author);
         holder.mTvTitle.setText(currentArticle.title);
-        holder.mTvContent.setText(currentArticle.content);
+        holder.mTvDescription.setText(currentArticle.description);
         Glide.with(context).load(currentArticle.urlToImage).into(holder.mIvNewsImage);
     }
 
@@ -48,7 +48,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
     public class NewsHolder extends RecyclerView.ViewHolder {
         private TextView mTvAuthor;
         private TextView mTvTitle;
-        private TextView mTvContent;
+        private TextView mTvDescription;
         private ImageView mIvNewsImage;
 
         public NewsHolder(@NonNull View itemView) {
@@ -56,7 +56,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
 
             mTvAuthor = itemView.findViewById(R.id.tv_author);
             mTvTitle = itemView.findViewById(R.id.tv_title);
-            mTvContent = itemView.findViewById(R.id.tv_content);
+            mTvDescription = itemView.findViewById(R.id.tv_description);
             mIvNewsImage = itemView.findViewById(R.id.iv_news_image);
 
         }

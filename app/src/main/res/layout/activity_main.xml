@@ -7,18 +7,27 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_try"
+        android:textColor="#ff0000"
+        android:singleLine="true"/>
+
     <Button
         android:id="@+id/btn_news"
         android:layout_width="match_parent"
+        android:textAllCaps="false"
         android:layout_height="wrap_content"
         android:minHeight="?attr/actionBarSize"
         android:onClick="onGetNewsClicked"
         android:text="News Headlines"
-        android:background="@color/colorPrimary"/>
+        android:background="@color/colorAccent"/>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/rc_NewHeadLines"
+        tools:listitem="@layout/cell_for_news"
         />
 
 </LinearLayout>
