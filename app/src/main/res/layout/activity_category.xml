@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CaterorgyActivity">
+    tools:context=".CategoryActivity">
 
     <TextView
         android:id="@+id/tv_marquee_text"
@@ -26,12 +26,12 @@
         android:layout_width="114dp"
         android:layout_height="114dp"
         android:layout_marginStart="196dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/business_bg"
         android:onClick="onBusinessPressed"
         android:src="@drawable/ic_baseline_attach_money_24"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintHorizontal_bias="0.098"
         app:layout_constraintStart_toStartOf="@+id/iv_sports"
         app:layout_constraintTop_toBottomOf="@+id/tv_marquee_text" />
 
@@ -85,20 +85,21 @@
         app:layout_constraintHorizontal_bias="0.168"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_sports"
-        app:srcCompat="@drawable/ic_health" />
+        app:srcCompat="@drawable/ic_health"
+        />
 
     <ImageButton
         android:id="@+id/ib_entertainment"
         android:layout_width="114dp"
         android:layout_height="114dp"
-        android:layout_marginBottom="256dp"
         android:background="@drawable/business_bg"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:onClick="onEntertainmentPressed"
+        app:layout_constraintBottom_toBottomOf="@id/ib_health"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.654"
+        app:layout_constraintHorizontal_bias="0.661"
         app:layout_constraintStart_toEndOf="@+id/ib_health"
         app:layout_constraintTop_toBottomOf="@+id/tv_business"
-        app:layout_constraintVertical_bias="0.571"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_entertainment" />
 
     <TextView

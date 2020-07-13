@@ -8,26 +8,61 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/tv_try"
-        android:textColor="#ff0000"
-        android:singleLine="true"/>
-
-    <Button
-        android:id="@+id/btn_news"
         android:layout_width="match_parent"
-        android:textAllCaps="false"
         android:layout_height="wrap_content"
-        android:minHeight="?attr/actionBarSize"
-        android:onClick="onGetNewsClicked"
-        android:text="News Headlines"
-        android:background="@color/colorAccent"/>
+        android:fontFamily="@font/copse"
+        android:singleLine="true"
+        android:textColor="#ff0000"
+        android:textStyle="bold" />
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="?attr/actionBarSize"
+    android:background="@color/colorAccent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_home"
+        android:background="@color/colorAccent"
+        android:layout_centerVertical="true"
+        android:id="@+id/iv_home_frm_headlines"
+        android:onClick="moveToHomeFromHeadlines"
+        android:layout_marginStart="10dp"/>
+
+
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/iv_bookmark_headline"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_outline_bookmark_border_24"
+        android:layout_marginEnd="30dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/iv_home_frm_headlines"
+        android:layout_toStartOf="@+id/iv_bookmark_headline"
+        android:text="News Bulletin"
+        android:textStyle="bold"
+        android:fontFamily="@font/adamina"
+        android:textSize="25sp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"/>
+
+</RelativeLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/rc_NewHeadLines"
         tools:listitem="@layout/cell_for_news"
+
         />
 
 </LinearLayout>

@@ -11,10 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HealthActivity"></activity>
+        <activity android:name=".EntertainmentActivity"></activity>
+        <activity android:name=".HealthActivity" />
         <activity android:name=".BusinessActivity" />
         <activity android:name=".SportsActivity" />
-        <activity android:name=".CaterorgyActivity">
+        <activity android:name=".CategoryActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -14,7 +14,7 @@ public class Articles {
 
     public Source source;
 
-    public static Articles parseJSONObject(JSONObject jsonObject){
+    public static Articles parseJSONObject(JSONObject jsonObject) {
         Articles item = new Articles();
         item.author = jsonObject.optString("author");
         item.description = jsonObject.optString("description");
@@ -29,10 +29,5 @@ public class Articles {
         return item;
     }
 
-    public static Articles parseJSONHeadlines(JSONObject jsonObject){
-        Articles headline = new Articles();
-
-        headline.title = jsonObject.optString("title");
-        return headline;
-    }
 }
+

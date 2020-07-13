@@ -20,26 +20,28 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SportsActivity extends AppCompatActivity {
-    RecyclerView mRcSports;
+public class EntertainmentActivity extends AppCompatActivity {
+    RecyclerView mRcEntertainment;
     private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sports);
-        mRcSports = findViewById(R.id.rc_sports);
-        mRcSports.setLayoutManager(new LinearLayoutManager(this));
-        progressDialog = new ProgressDialog(SportsActivity.this);
-        progressDialog.setMessage("Getting Bulletin ...");
-        getSportsNews();
+        setContentView(R.layout.activity_entertainment);
+        mRcEntertainment = findViewById(R.id.rc_entertainment);
+        mRcEntertainment.setLayoutManager(new LinearLayoutManager(this));
+
+        progressDialog = new ProgressDialog(EntertainmentActivity.this);
+        progressDialog.setMessage("Everything you wanted to know is on other side of time...");
+
+        getEntertainmentNews();
     }
 
-    private void getSportsNews() {
+    private void getEntertainmentNews() {
         progressDialog.show();
         API_Interface apiInterface = APIClient.getClient().create(API_Interface.class);
-        Call<String> getSports = apiInterface.getSports();
-        getSports.enqueue(new Callback<String>() {
+        Call<String> getEntertainment = apiInterface.getEntertainment();
+        getEntertainment.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
                 String responseValue = response.body();
@@ -58,20 +60,22 @@ public class SportsActivity extends AppCompatActivity {
                 }
                 progressDialog.hide();
 
-                NewsAdapter adapter = new NewsAdapter(SportsActivity.this,articles);
-                mRcSports.setAdapter(adapter);
+                NewsAdapter adapter = new NewsAdapter(EntertainmentActivity.this,articles);
+                mRcEntertainment.setAdapter(adapter);
             }
 
             @Override
             public void onFailure(Call<String> call, Throwable t) {
-                Toast.makeText(SportsActivity.this, "Failure", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EntertainmentActivity.this, "Failure", Toast.LENGTH_SHORT).show();
                 progressDialog.hide();
             }
         });
+
     }
 
-    public void moveToHomeFromSports(View view){
-        startActivity(new Intent(SportsActivity.this, CategoryActivity.class));
+
+    public void moveToHomeFromEntertainment(View view){
+        startActivity(new Intent(EntertainmentActivity.this, CategoryActivity.class));
         finish();
     }
 }
